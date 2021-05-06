@@ -15,7 +15,7 @@ public class ResourceController {
 
     @GetMapping
     public List<ResourceDto> getAll(){
-        return resourceService.getAll().stream().map(r -> ResourceMapper.mapToResourceDto(r)).collect(Collectors.toList());
+        return resourceService.getAll().stream().map(ResourceMapper::mapToResourceDto).collect(Collectors.toList());
     }
 
     @PostMapping
